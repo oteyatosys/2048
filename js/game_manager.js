@@ -8,6 +8,7 @@ function GameManager(inputManager, actuator, storageManager) {
 
   this.inputManager.on("move", this.move.bind(this));
   this.inputManager.on("restart", this.restart.bind(this));
+  this.inputManager.on("setRunning", this.setRunning.bind(this));
 
   this.setup();
 }
@@ -17,6 +18,11 @@ GameManager.prototype.restart = function () {
   this.storageManager.clearGameState();
   this.actuator.continueGame(); // Clear the game done message
   this.setup();
+};
+
+GameManager.prototype.setRunning = function (running) {
+  this.running = running;
+  this.actuator.updateRunning(false);
 };
 
 // Return true if the game is over
@@ -80,6 +86,7 @@ GameManager.prototype.actuate = function () {
   this.actuator.actuate(this.grid, {
     score:      this.score,
     over:       this.over,
+    running:    this.running,
     bestScore:  this.storageManager.getBestScore(),
     terminated: this.isGameTerminated()
   });

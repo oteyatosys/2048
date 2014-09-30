@@ -1,9 +1,8 @@
 # 2048
 
 This is the framework for a competition.
-The Goal is to write the best computer player, to compete for the best score.
 
-You win when you beat your own highscore.
+Change the handler function found in [application.js](https://github.com/oteyatosys/2048/blob/master/js/application.js).
 
 [Play original game here!](http://gabrielecirulli.github.io/2048/)
 
@@ -12,6 +11,3 @@ Changes and improvements are more than welcome! Feel free to fork and open a pul
 
 ## License
 2048 is licensed under the [MIT license.](https://github.com/gabrielecirulli/2048/blob/master/LICENSE.txt)
-
-## Donations
-I made this in my spare time, and it's hosted on GitHub (which means I don't have any hosting costs), but if you enjoyed the game and feel like buying me coffee, you can donate at my BTC address: `1Ec6onfsQmoP9kkL3zkpB6c5sA4PVcXU2i`. Thank you very much!

@@ -3,6 +3,8 @@ function Autopilot (delay, gameManager, handler){
   this.gameManager = gameManager;
   this.handler     = handler;
 
+  this.timeoutId = null;
+
   var self = this;
 
   this.gameManager.inputManager.on("start", function () {
@@ -44,7 +46,10 @@ Autopilot.prototype.serializedGrid = function () {
 Autopilot.prototype.run = function () {
   var self = this;
 
-  setTimeout(function(){
+  // Stop timeout if one is currently running
+  clearTimeout(this.timeoutId);
+
+  this.timeoutId = setTimeout(function(){
 
     if( self.gameManager.isGameTerminated() ){
       self.gameManager.setRunning(false);

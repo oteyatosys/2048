@@ -24,7 +24,7 @@ Autopilot.prototype.serializedGrid = function () {
     var row = cellState[x] = [];
 
     for (var y = 0; y < grid.size; y++) {
-      row.push(grid.cells[x][y] ? grid.cells[x][y].value : null);
+      row.push(grid.cells[x][y] ? grid.cells[x][y].value : 0);
     }
   }
 
